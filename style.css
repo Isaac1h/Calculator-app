@@ -1,90 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
 :root {
-  /* === LARGEURS DE DESIGN === */
-  --width-design-mobile: 375px;    /* Largeur cible pour mobile (design de référence) */
-  --width-design-desktop: 1440px;  /* Largeur cible pour desktop (design de référence) */
-  --design-min-test: 320px;        /* Largeur minimale pour tester la responsivité */
-  --design-max-test: 2560px;       /* Largeur maximale pour tester la responsivité */
+  --font-family-system: "League Spartan", sans-serif;
+  --font-weight-heading: 700;
+  --font-size-number: 32px;
 
-  /* === TYPOGRAPHIE === */
-  --font-family-system: "League Spartan", sans-serif;  /* Police principale du projet */
-  --font-weight-heading: 700;      /* Poids de la police (Bold) */
-  --font-size-number: 32px;        /* Taille de police pour les nombres de la calculatrice */
+  --radius-sm: 6px;
 
-  /* === ESPACEMENTS === */
-  --radius-sm: 6px;                /* Petit rayon de bordure arrondie */
-  --radius-md: 12px;               /* Moyen rayon de bordure arrondie */
-  --gap-xs: 6px;                   /* Très petit espacement */
-  --gap-sm: 12px;                  /* Petit espacement */
-  --gap-md: 24px;                  /* Moyen espacement */
-
-  /* === OMBRES DES TOUCHES === */
-  --key-shadow-distance: 4px;      /* Distance de l'ombre portée des touches */
-  --key-shadow-blur: 0px;          /* Flou de l'ombre (0 = ombre nette) */
-  --key-shadow-opacity: 1;         /* Opacité de l'ombre (1 = complètement opaque) */
+  --key-shadow-distance: 4px;
 }
 
-.theme--1{
+body.theme--1 {
+  display: flex;
+  justify-content: center;
+}
+
+.theme--1 {
   --bg-main: hsl(222, 26%, 31%);
   --bg-toggle: hsl(223, 31%, 20%);
   --bg-screen: hsl(224, 36%, 15%);
 
   --key-bg-primary: hsl(225, 21%, 49%);
-  --key-shadow-primary: hsl(224, 28%, 35%);
-
   --key-bg-accent: hsl(6, 63%, 50%);
-  --key-shadow-accent: hsl(6, 70%, 34%);
 
-  --key-bg-neutral: hsl(0, 0%, 90%);
-  --key-shadow-neutral: hsl(28, 16%, 65%);
-
-  --text-primary: hsl(221, 14%, 31%);
-  --text-on-dark: hsl(0, 0%, 100%);
+  --text-on-dark: white;
 }
-
-/* .theme--2 {
-  --bg-main: hsl(0, 0%, 90%);
-  --bg-toggle: hsl(0, 5%, 81%);
-  --bg-screen: hsl(0, 0%, 93%);
-
-  --key-bg-primary: hsl(185, 42%, 37%);
-  --key-shadow-primary: hsl(185, 58%, 25%);
-
-  --key-bg-accent: hsl(25, 98%, 40%);
-  --key-shadow-accent: hsl(25, 99%, 27%);
-
-  --key-bg-neutral: hsl(0, 0%, 90%);
-  --key-shadow-neutral: hsl(35, 11%, 61%);
-
-  --text-primary: hsl(60, 10%, 19%);
-  --text-on-dark: hsl(0, 0%, 100%);
-}
-
-.theme--3 {
-  --bg-main: hsl(268, 75%, 9%);
-  --bg-toggle: hsl(268, 71%, 12%);
-  --bg-screen: hsl(268, 71%, 12%);
-
-  --key-bg-primary: hsl(281, 89%, 26%);
-  --key-shadow-primary: hsl(285, 91%, 52%);
-
-  --key-bg-accent: hsl(176, 100%, 44%);
-  --key-shadow-accent: hsl(177, 92%, 70%);
-
-  --key-bg-secondary: hsl(268, 47%, 21%);
-  --key-shadow-secondary: hsl(290, 70%, 36%);
-
-  --text-primary: hsl(52, 100%, 62%);
-  --text-secondary: hsl(198, 20%, 13%);
-  --text-on-dark: hsl(0, 0%, 100%);
-} */
 
 html, body {
-  font-family: var(--font-family-system); /* ------------------- */
+  overflow: hidden;
+  font-family: var(--font-family-system);
   background: var(--bg-main);
   color: var(--text-on-dark);
 }
 
-.text--primary { color: var(--text-primary); }
-.text--on-dark { color: var(--text-on-dark); }
+.calculator-screen {
+  background: var(--bg-screen);
+  padding: 30px 24px;
+}
+
+.calculator-buttons {
+  background: var(--bg-toggle);
+  padding: 24px;
+}
+
+.btn-calc {
+  width: 100%;
+  padding: 20px 0;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-number);
+  cursor: pointer;
+}
+
+.btn-reset {
+  background: var(--key-bg-primary);
+  color: white;
+}
+
+.btn-delete {
+  background: var(--key-bg-primary);
+  color: white;
+}
+
+.btn-equals {
+  background: var(--key-bg-accent);
+  color: white;
+}
