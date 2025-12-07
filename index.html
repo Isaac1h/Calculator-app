@@ -1,77 +1,109 @@
 <!DOCTYPE html>
 <html lang="fr" class="theme--1">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon-32x32.png" />
     <title>Calculator app</title>
-</head>
+  </head>
 
-<body class="theme--1">
-
-<div class="container">
-
-    <div class="row justify-content-center min-vh-100">
-
+  <body class="theme--1">
+    <div class="container mt-5">
+      <div class="row justify-content-center min-vh-100 mt-5">
         <div class="col-12 col-md-8 col-lg-6">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <h1 class="text-white m-0">calc</h1>
+            <span class="text-white">THEME</span>
+          </div>
 
-            <div class="d-flex justify-content-between align-items-center mb-1">
-                <h1 class="text-white m-0">calc</h1>
-                <span class="text-white">THEME</span>
+          <div class="row mb-3">
+            <div class="col-12">
+              <div class="calculator-screen text-end fs-1" id="screen"></div>
+            </div>
+          </div>
+
+          <div class="calculator-buttons rounded-3">
+            <div class="row mb-3">
+              <div class="col-3">
+                <button class="btn-calc key" data-value="7">7</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="8">8</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="9">9</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc btn-delete " id="del">DEL</button>
+              </div>
             </div>
 
             <div class="row mb-3">
-                <div class="col-12">
-                    <div class="calculator-screen text-end fs-1">399,981</div>
-                </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="4">4</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="5">5</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="6">6</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="+">+</button>
+              </div>
             </div>
 
-            <div class="calculator-buttons rounded-3">
-
-                <div class="row mb-3">
-                    <div class="col-3"><button class="btn-calc">7</button></div>
-                    <div class="col-3"><button class="btn-calc">8</button></div>
-                    <div class="col-3"><button class="btn-calc">9</button></div>
-                    <div class="col-3"><button class="btn-calc btn-delete">DEL</button></div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-3"><button class="btn-calc">4</button></div>
-                    <div class="col-3"><button class="btn-calc">5</button></div>
-                    <div class="col-3"><button class="btn-calc">6</button></div>
-                    <div class="col-3"><button class="btn-calc">+</button></div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-3"><button class="btn-calc">1</button></div>
-                    <div class="col-3"><button class="btn-calc">2</button></div>
-                    <div class="col-3"><button class="btn-calc">3</button></div>
-                    <div class="col-3"><button class="btn-calc">-</button></div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-3"><button class="btn-calc">.</button></div>
-                    <div class="col-3"><button class="btn-calc">0</button></div>
-                    <div class="col-3"><button class="btn-calc">/</button></div>
-                    <div class="col-3"><button class="btn-calc">x</button></div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6"><button class="btn-calc btn-reset w-100">RESET</button></div>
-                    <div class="col-6"><button class="btn-calc btn-equals w-100">=</button></div>
-                </div>
-
+            <div class="row mb-3">
+              <div class="col-3">
+                <button class="btn-calc key" data-value="1">1</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="2">2</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="3">3</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="-">-</button>
+              </div>
             </div>
 
+            <div class="row mb-3">
+              <div class="col-3">
+                <button class="btn-calc key" data-value=".">.</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="0">0</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="/">/</button>
+              </div>
+              <div class="col-3">
+                <button class="btn-calc key" data-value="x">x</button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-6">
+                <button class="btn-calc btn-reset w-100" id="reset">
+                  RESET
+                </button>
+              </div>
+              <div class="col-6">
+                <button class="btn-calc btn-equals w-100" id="equal">=</button>
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
+    <script src="/script.js"></script>
 
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
